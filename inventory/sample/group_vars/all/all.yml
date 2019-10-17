@@ -43,8 +43,8 @@ loadbalancer_apiserver_healthcheck_port: 8081
 
 ## Upstream dns servers
 # upstream_dns_servers:
-#   - 8.8.8.8
-#   - 8.8.4.4
+   - 8.8.8.8
+   - 172.16.1.1
 
 ## There are some changes specific to the cloud providers
 ## for instance we need to encapsulate packets with some network plugins
@@ -53,7 +53,17 @@ loadbalancer_apiserver_healthcheck_port: 8081
 ## like you would do when using openstack-client before starting the playbook.
 ## Note: The 'external' cloud provider is not supported.
 ## TODO(riverzhang): https://kubernetes.io/docs/tasks/administer-cluster/running-cloud-controller/#running-cloud-controller-manager
-# cloud_provider:
+cloud_provider: vsphere
+vsphere_vcenter_ip: "rvcenter.rlab.com"
+vsphere_vcenter_port: 443
+vsphere_insecure: 1
+vsphere_user: "administrator@vsphere.local"
+vsphere_password: "VMware1!"
+vsphere_datacenter: "rlab-datacento01"
+vsphere_datastore: "vsanDatastore"
+vsphere_working_dir: "Docker_hosts"
+vsphere_scsi_controller_type: "pvscsi"
+vsphere_resource_pool: "default"
 
 ## Set these proxy values in order to update package manager and docker daemon to use proxies
 # http_proxy: ""
