@@ -63,7 +63,7 @@ vsphere_datacenter: "rlab-datacento01"
 vsphere_datastore: "vsanDatastore"
 vsphere_working_dir: "Docker_hosts"
 vsphere_scsi_controller_type: "pvscsi"
-vsphere_resource_pool: "default"
+vsphere_resource_pool: "Resources"
 
 ## Set these proxy values in order to update package manager and docker daemon to use proxies
 # http_proxy: ""
